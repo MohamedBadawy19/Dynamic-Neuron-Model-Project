@@ -32,7 +32,7 @@ This system simulates neuron spikes in response to an external current `In(t)`.
 
 ## 🛠️ What’s Included
 
-- `dnm_pinn_solver.py`: Main Python script with:
+- `PINN_Model.ipynb`: Main Python script with:
   - Euler and RK4 solvers
   - Physics-Informed Neural Network (PINN) on `[0, 200 ms]`
   - Full plots and comparisons
