@@ -1,84 +1,55 @@
-# Dynamic Neuron Model with PINN and Numerical Methods
+# 🧠 Physics-Informed Neural Network (PINN) for Neuron Modeling
 
-This project implements and compares different approaches for solving the **Dynamic Neuron Model (DNM)** ODE system from Schiesser's textbook:
-
-> *Schiesser, W.E. (2014). Dynamic Neuron Models in Biomedical Engineering (Chapter 4).*
-
-We use:
-- 🧮 **Numerical methods**: Euler and RK4
-- 🧠 **Physics-Informed Neural Networks (PINNs)**
+These notebooks demonstrates the use of a **Physics-Informed Neural Network (PINN)** to model the spiking behavior of a neuron based on the **Izhikevich model**. The work is part of a biomedical engineering project aimed at exploring machine learning approaches to simulate dynamic neuronal behavior.
 
 ---
 
-## 📌 Problem Description
+## 📜 Project Summary
 
-The DNM describes a neuron’s membrane voltage `v(t)` and a recovery variable `w(t)` using a system of ODEs:
-
-C dv/dt = k(v - vr)(v - vt) - w + In(t)
-dw/dt = a[b(v - vr) - w]
-
-yaml
-Copy
-Edit
-
-with spike-reset conditions:
-- If `v ≥ v_peak`:  
-  `v ← c`,  
-  `w ← w + d`
-
-This system simulates neuron spikes in response to an external current `In(t)`.
+- **Objective:** Learn the voltage `v(t)` and recovery variable `w(t)` dynamics of a spiking neuron using PINNs.
+- **Challenge:** The real neuronal signal contains rapid and irregular spikes that are difficult for a standard PINN to approximate due to its continuous-function assumption.
+- **Solution:** Use a feedback mechanism from a classical numerical method (Euler's method) to guide the training and improve accuracy.
 
 ---
 
-## 🛠️ What’s Included
+## ⚠️ Limitations of Pure PINN
 
-- `PINN_Model.ipynb`: Main Python script with:
-  - Euler and RK4 solvers
-  - Physics-Informed Neural Network (PINN) on `[0, 200 ms]`
-  - Full plots and comparisons
-- `README.md`: This file
+The initial implementation trained a pure PINN without any guidance. It suffered from:
 
----
+- Difficulty in learning sharp action potential spikes
+- Poor convergence during training
+- Inaccurate phase alignment
 
-## 🧠 Why Use PINNs?
+### 🔹 Pure PINN Output
 
-- Traditional solvers (Euler, RK4) require discretization.
-- **PINNs** learn a continuous function that obeys the differential equations, using only the **physics (ODEs)** — no training data required.
-- Great for inverse problems, learning dynamics from sparse data, or continuous generalization.
+![Pure PINN](https://github.com/MohamedBadawy19/Dynamic-Neuron-Model-Project/blob/main/results/plots/Pure_PINN_Graph.png?raw=true)
+
+As shown above, the model failed to capture the spike morphology and timing accurately.
 
 ---
 
-## 📊 Results
+## ✅ Guided PINN with Euler Feedback
 
-- The PINN learns accurate membrane dynamics on `[0–200 ms]` before the first spike.
-- It matches RK4 with high accuracy (MSE < `1e-3`).
-- Euler and RK4 show full spike trains up to 1000 ms, confirming correctness.
+To overcome the limitations, we introduced a **feedback system** using spike detection from the Euler solution. The idea was to:
 
----
+- Detect the spike times from Euler's method
+- Focus training around these high-dynamic regions
+- Improve convergence and accuracy using informed collocation point placement
 
-## 🧪 Parameters Used
+### 🔹 Guided PINN Output
 
-From the reference textbook (Ch.4):
+![Guided PINN](https://github.com/MohamedBadawy19/Dynamic-Neuron-Model-Project/blob/main/results/plots/PINN_vs_REF.png?raw=true)
 
-| Parameter | Value     | Description                    |
-|-----------|-----------|--------------------------------|
-| C         | 100       | Capacitance                    |
-| vr        | -60       | Resting potential              |
-| vt        | -40       | Threshold potential            |
-| k         | 0.7       | Spike steepness                |
-| a         | 0.03      | Recovery time constant         |
-| b         | -2        | Recovery sensitivity           |
-| c         | -50       | Reset voltage after spike      |
-| d         | 100       | Recovery increment after spike |
-| v_peak    | 35        | Spike threshold (cutoff)       |
-| In(t)     | 0 → 70    | Step current at t = 100 ms     |
+The result shows a near-perfect match in spike timing, voltage peak, and recovery phase.
 
 ---
 
-## ⚠️ Limitations
+## 🧪 Key Features of the Notebook
 
-- PINNs struggle to learn sharp discontinuities like spike resets.
-- This implementation only trains the PINN on **[0, 200 ms]** to avoid discontinuities.
-- For full spike learning, future work can:
-  - Train PINNs segment-wise
-  - Encode reset logic directly into the network or loss
+- Implements Izhikevich neuron differential equations
+- Trains a fully connected neural network using PyTorch
+- Uses both Adam and LBFGS optimizers
+- Visualizes training loss, residuals, and solution comparisons
+- Compares against ground truth from Euler's method
+
+---
