@@ -9,7 +9,7 @@ These plots represent the membrane potential and recovery variable as simulated 
 
 - **Recovery Variable (w):**
 
-<img src="https://raw.githubusercontent.com/MohamedBadawy19/Dynamic-Neuron-Model-Project/main/results/plots/W_Euler.png" alt="Recovery Variable Plot" width="500"/>
+![Recovery Variable Plot](./images/W_Euler.png)
 
 ---
 
