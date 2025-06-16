@@ -4,12 +4,11 @@
 These plots represent the membrane potential and recovery variable as simulated using **Euler's Method**. They serve as a reference to evaluate the accuracy of the PINN model.
 
 - **Membrane Potential (v):**
-
-  ![Membrane Potential Plot](https://github.com/MohamedBadawy19/Dynamic-Neuron-Model-Project/blob/main/results/plots/V_Euler.png?raw=true)
+      ![V_Euler](https://github.com/user-attachments/assets/97f32761-ead0-4cf0-b245-78cf6625235b)
 
 - **Recovery Variable (w):**
 
-![Recovery Variable Plot](https://github.com/MohamedBadawy19/Dynamic-Neuron-Model-Project/blob/main/results/plots/W_Euler.png)
+      ![W_Euler](https://github.com/user-attachments/assets/09786875-de60-4d87-8753-8a4d113a06a3)
 
 ---
 
@@ -18,9 +17,9 @@ These plots represent the membrane potential and recovery variable as simulated 
 We first trained the PINN model over a 160 ms window. However, the performance was poor due to its inability to capture rapid voltage spikes.
 
 - **Initial PINN Output (160 ms):**
-
-  ![Initial Result Plot](https://github.com/MohamedBadawy19/Dynamic-Neuron-Model-Project/blob/main/results/plots/PINN160.png?raw=true)
-
+- 
+      ![PINN160](https://github.com/user-attachments/assets/9523300f-8393-4233-bff1-678ee131de35)
+  
 ---
 
 ### 🔹 Improved PINN Using Spike Detection
@@ -28,21 +27,22 @@ We first trained the PINN model over a 160 ms window. However, the performance w
 To improve the results, we implemented a spike-detection mechanism that allowed the model to better learn the sharp transitions in the neuron signal. This yielded a significantly more accurate outcome.
 
 - **Final PINN vs. Reference:**
-
-  ![Final Result Plot](https://github.com/MohamedBadawy19/Dynamic-Neuron-Model-Project/blob/main/results/plots/PINN_vs_REF.png?raw=true)
+  
+    ![PINN_vs_REF](https://github.com/user-attachments/assets/f705944b-3426-4b52-8990-1613d470a33e)
 
 - **Phase Space Plot (v-w):**
 
-  ![Phase Plot](https://github.com/MohamedBadawy19/Dynamic-Neuron-Model-Project/blob/main/results/plots/PhaseGraph.png?raw=true)
+    ![PhaseGraph](https://github.com/user-attachments/assets/5f6c9191-c11a-4b20-98a2-608f2696201c)
 
 - **Error Over Time (%):**
-
-  ![Error Plot](https://github.com/MohamedBadawy19/Dynamic-Neuron-Model-Project/blob/main/results/plots/ErrorOverTime.png?raw=true)
+  
+  ![ErrorOverTime](https://github.com/user-attachments/assets/4996b7e1-b2cb-4062-a142-fb603e439adf)
 
 - **Residuals Across Domain:**
-
-  ![Residuals Plot](https://github.com/MohamedBadawy19/Dynamic-Neuron-Model-Project/blob/main/results/plots/Residuals.png?raw=true)
+  
+  ![Residuals](https://github.com/user-attachments/assets/1e7ee7a8-69a2-4aef-939d-8626ad0f1afc)
 
 - **Training Loss Curve:**
+  
+  ![TrainingLoss](https://github.com/user-attachments/assets/d2cadc18-4713-4227-9cf4-5d494aa4a82a)
 
-  ![Training Loss Plot](https://github.com/MohamedBadawy19/Dynamic-Neuron-Model-Project/blob/main/results/plots/TrainingLoss.png?raw=true)
