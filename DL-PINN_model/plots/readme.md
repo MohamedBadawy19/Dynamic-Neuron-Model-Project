@@ -4,6 +4,7 @@
 These plots represent the membrane potential and recovery variable as simulated using **Euler's Method**. They serve as a reference to evaluate the accuracy of the PINN model.
 
 - **Membrane Potential (v):**
+
 ![V_Euler](https://github.com/user-attachments/assets/26bb247d-f1bc-44e7-bf3a-c0e1f5b85525)
 
 - **Recovery Variable (w):**
