@@ -58,7 +58,7 @@ If you're using **GitHub Desktop**:
 3. Click **"Clone"**
 
 If you're using the **command line**:
-git clone https://github.com/your-username/neuron-dynamics-unity.git
+git clone https://github.com/MohamedBadawy19/Dynamic-Neuron-Model-Project.git
 
 ---
 
