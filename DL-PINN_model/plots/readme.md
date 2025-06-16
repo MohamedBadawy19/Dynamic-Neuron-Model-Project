@@ -4,11 +4,11 @@
 These plots represent the membrane potential and recovery variable as simulated using **Euler's Method**. They serve as a reference to evaluate the accuracy of the PINN model.
 
 - **Membrane Potential (v):**
-      ![V_Euler](https://github.com/user-attachments/assets/97f32761-ead0-4cf0-b245-78cf6625235b)
+![V_Euler](https://github.com/user-attachments/assets/26bb247d-f1bc-44e7-bf3a-c0e1f5b85525)
 
 - **Recovery Variable (w):**
 
-      ![W_Euler](https://github.com/user-attachments/assets/09786875-de60-4d87-8753-8a4d113a06a3)
+![W_Euler](https://github.com/user-attachments/assets/b3e1ed06-7e6d-4fe0-992f-8aea3f1a9395)
 
 ---
 
@@ -17,7 +17,6 @@ These plots represent the membrane potential and recovery variable as simulated 
 We first trained the PINN model over a 160 ms window. However, the performance was poor due to its inability to capture rapid voltage spikes.
 
 - **Initial PINN Output (160 ms):**
-- 
       ![PINN160](https://github.com/user-attachments/assets/9523300f-8393-4233-bff1-678ee131de35)
   
 ---
