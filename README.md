@@ -1,1 +1,0 @@
-# Dynamic-Neuron-Model-Project
