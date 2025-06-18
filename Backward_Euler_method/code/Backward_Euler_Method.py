@@ -194,6 +194,7 @@ def main():
     # Create time vector
     time = np.arange(0, T + dt, dt)
 
+<<<<<<< HEAD
     # Plotting
     plt.figure(figsize=(14, 10))
 
@@ -207,6 +208,27 @@ def main():
     plt.legend()
     plt.grid(True)
     plt.ylim(-80, 40)
+=======
+# Plot membrane potential
+plt.subplot(2, 2, 1)
+plt.plot(time, v_be, 'b', label='Membrane Potential')
+plt.axhline(y=vpeak, color='r', linestyle='--', label='Spike Threshold')
+plt.title('Backward Euler: Membrane Potential (v)')
+plt.ylabel('Membrane Potential (mV)')
+plt.xlabel('Time (ms)')
+plt.legend()
+plt.grid(True)
+plt.ylim(-80, 40)  # Adjust scale to cover -70 to +40
+
+# Plot recovery variable
+plt.subplot(2, 2, 2)
+plt.plot(time, w_be, 'g', label='Recovery Variable')
+plt.title('Recovery Variable (pA)')
+plt.xlabel('Time (ms)')
+plt.ylabel('Recovery Variable (w)')
+plt.legend()
+plt.grid(True)
+>>>>>>> 967e097bd15b6b829bbd946a76019fb69ef1b65a
 
     # Plot recovery variable
     plt.subplot(2, 2, 2)
