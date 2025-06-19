@@ -1,6 +1,6 @@
 # Adaptive Exponential Rosenbrock–Euler Method (ExpRESS–Euler)
 
-This project presents a detailed implementation and analysis of the **Adaptive Exponential Rosenbrock–Euler Method (ExpRESS–Euler)**, a numerical scheme designed to solve stiff ordinary differential equations (ODEs) efficiently. It is particularly suited for neuron models where abrupt state changes and nonlinear dynamics often lead to stiffness.
+This file presents a detailed implementation and analysis of the **Adaptive Exponential Rosenbrock–Euler Method (ExpRESS–Euler)**, a numerical scheme designed to solve stiff ordinary differential equations (ODEs) efficiently. It is particularly suited for neuron models where abrupt state changes and nonlinear dynamics often lead to stiffness.
 
 ---
 
@@ -10,10 +10,10 @@ The report includes the following:
 
 ### ✅ 1. ODE System
 Describes the two coupled differential equations modeling a neuron's membrane potential `v` and recovery variable `w`:
-'''
+```
 dv/dt = k(v − vr)(v − vt) − w + In
 dw/dt = a[b(v − vr) − w]
-'''
+```
 
 ### ✅ 2. Parameters & Initial Conditions
 A breakdown of all parameters, constants, and initial values used in the simulation, including:
