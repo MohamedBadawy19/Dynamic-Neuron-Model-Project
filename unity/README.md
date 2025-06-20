@@ -6,7 +6,7 @@ This Unity project simulates the electrical behavior of a spiking neuron using t
 
 ## 🚀 Features
 
-- Real-time simulation of a spiking neuron using **Euler’s Method**
+- Real-time simulation of a spiking neuron using **Euler’s Method**, **RK4 Method**
 - Editable parameters:
   - Input Current (I)
   - Capacitance (C)
@@ -81,7 +81,10 @@ git clone https://github.com/MohamedBadawy19/Dynamic-Neuron-Model-Project.git
    - **C** – Membrane capacitance
    - **k**, **a**, **b** – Constants controlling the differential behavior
 4. Adjust the sliders during simulation. When the input current is high enough, the neuron will spike.
-5. A visual effect will move along the neuron's body, simulating a signal.
+5. In Play Mode, use the toggle labeled “RK4” to switch between:
+   - **Unchecked** – Simulation runs using Euler’s method
+   - **Checked** – Simulation runs using the Runge-Kutta 4th order (RK4) method
+6. A visual effect will move along the neuron's body, simulating a signal.
 
 > Tip: The simulation runs in real-time and responds instantly to slider adjustments.
 
