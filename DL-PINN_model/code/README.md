@@ -22,7 +22,7 @@ The initial implementation trained a pure PINN without any guidance. It suffered
 
 ### 🔹 Pure PINN Output
 
-![Pure PINN](https://github.com/MohamedBadawy19/Dynamic-Neuron-Model-Project/blob/main/results/plots/Pure_PINN_Graph.png?raw=true)
+![Pure PINN](https://github.com/MohamedBadawy19/Dynamic-Neuron-Model-Project/blob/main/DL-PINN_model/plots/Pure_PINN_Graph.png?raw=true)
 
 As shown above, the model failed to capture the spike morphology and timing accurately.
 
@@ -38,7 +38,7 @@ To overcome the limitations, we introduced a **feedback system** using spike det
 
 ### 🔹 Guided PINN Output
 
-![Guided PINN](https://github.com/MohamedBadawy19/Dynamic-Neuron-Model-Project/blob/main/results/plots/PINN_vs_REF.png?raw=true)
+![Guided PINN](https://github.com/MohamedBadawy19/Dynamic-Neuron-Model-Project/blob/main/DL-PINN_model/plots/PINN_vs_REF.png?raw=true)
 
 The result shows a near-perfect match in spike timing, voltage peak, and recovery phase.
 
